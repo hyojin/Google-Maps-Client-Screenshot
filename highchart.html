@@ -71,19 +71,23 @@ $(function () {
   
 <script>
 $( document ).ready(function() {
-$('.btn').click(function() {
+	$('.btn').click(function() {
+		html2canvas(document.body, {
+		  proxy: 'server.js',
+		  useCORS: true,
+		  onrendered: function(canvas) {
+			document.body.appendChild(canvas);
+		  }
+		});
 
 
-html2canvas(document.body, {
-  proxy: 'server.js',
-  useCORS: true,
-  onrendered: function(canvas) {
-    document.body.appendChild(canvas);
-  }
-});
+	});
 
 });
-});
+
+
+
+
 </script>
 
 	</body>
