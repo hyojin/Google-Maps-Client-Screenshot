@@ -80,7 +80,10 @@ $( document ).ready(function() {
 		  }
 		});
 
+		var canvas = document.getElementByTagName("canvas");
+		var img    = canvas.toDataURL("image/png");
 
+		document.write('<img src="'+img+'"/>');
 	});
 
 });
